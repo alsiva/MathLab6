@@ -8,6 +8,7 @@ import compMath.Methods.RungeKutta;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
 
 public class Application {
@@ -41,6 +42,9 @@ public class Application {
         adamsAnswer.showAnswer();
         System.out.println("");
 
+        Graph graph = new Graph();
+        graph.setData(List.of(rungeAnswer, adamsAnswer), rungeAnswer.getSolution(), rungeAnswer.getPreciseSolution());
+        graph.run();
     }
 
     private static int readIndex() {

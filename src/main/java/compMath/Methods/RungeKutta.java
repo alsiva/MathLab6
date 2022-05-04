@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class RungeKutta {
+public class RungeKutta implements Method {
 
     public Answer solve(double a, double b, Function function, double y0) {
 
@@ -32,7 +32,7 @@ public class RungeKutta {
 
         }
 
-        return new Answer(new DotStorage(solution), new DotStorage(preciseSolution));
+        return new Answer(new DotStorage(solution), new DotStorage(preciseSolution), "Рунге-Кутта");
 
     }
 }

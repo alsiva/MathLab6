@@ -1,18 +1,21 @@
 package compMath.Methods;
 
-import compMath.Math.Dot;
 import compMath.Math.DotStorage;
-
-import java.util.Map;
 
 public class Answer {
 
     private final DotStorage solution;
     private final DotStorage preciseSolution;
+    private final String name;
     
-    public Answer(DotStorage solution, DotStorage preciseSolution) {
+    public Answer(DotStorage solution, DotStorage preciseSolution, String name) {
         this.solution = solution;
         this.preciseSolution = preciseSolution;
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     public DotStorage getSolution() {

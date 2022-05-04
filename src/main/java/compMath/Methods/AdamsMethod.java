@@ -5,7 +5,7 @@ import compMath.Math.DotStorage;
 import compMath.Math.Function;
 
 
-public class AdamsMethod {
+public class AdamsMethod implements Method {
 
     public Answer solve(double a, double b, Function function, double y0) {
 
@@ -49,6 +49,6 @@ public class AdamsMethod {
         }
 
 
-        return new Answer(dots, preciseSolution);
+        return new Answer(dots, preciseSolution, "Метод Адама");
     }
 }

@@ -22,4 +22,18 @@ public class DotStorage {
         return DOTS.get(index);
     }
 
+
+    public double getMaxAbs() {
+        double max = -Double.MAX_VALUE;
+
+        for (Dot dot : DOTS) {
+            double absValue = Math.max(Math.abs(dot.getX()), Math.abs(dot.getY()));
+            if (max < absValue) {
+                max = absValue;
+            }
+        }
+
+        return max;
+    }
+
 }
