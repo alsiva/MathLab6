@@ -1,4 +1,4 @@
-package compMath;
+package compMath.Math;
 
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;

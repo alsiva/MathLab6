@@ -1,4 +1,6 @@
-package compMath;
+package compMath.Math;
+
+import compMath.Math.Function;
 
 import java.util.Arrays;
 import java.util.List;

@@ -5,4 +5,8 @@ module edu.ifmo.math {
 
     opens compMath to javafx.fxml;
     exports compMath;
+    exports compMath.Math;
+    opens compMath.Math to javafx.fxml;
+    exports compMath.Methods;
+    opens compMath.Methods to javafx.fxml;
 }

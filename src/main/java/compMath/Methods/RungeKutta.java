@@ -1,8 +1,11 @@
-package compMath;
+package compMath.Methods;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import compMath.Math.Dot;
+import compMath.Math.DotStorage;
+import compMath.Math.Function;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class RungeKutta {
 
@@ -12,13 +15,13 @@ public class RungeKutta {
         double y = y0;
 
 
-        Map<Double, Double> solution = new TreeMap<>();
-        Map<Double, Double> preciseSolution = new TreeMap<>();
+        List<Dot> solution = new ArrayList<>();
+        List<Dot> preciseSolution = new ArrayList<>();
 
         for (double x = a; x <= b + h / 4 ; x += h) {
 
-            solution.put(x, y);
-            preciseSolution.put(x, function.applyPreciseFunction(x));
+            solution.add(new Dot(x, y));
+            preciseSolution.add(new Dot(x, function.applyPreciseFunction(x)));
 
             double k1 = h * function.apply(x, y);
             double k2 = h * function.apply(x + h/2, y + k1/2);
@@ -29,7 +32,7 @@ public class RungeKutta {
 
         }
 
-        return new Answer(solution, preciseSolution);
+        return new Answer(new DotStorage(solution), new DotStorage(preciseSolution));
 
     }
 }

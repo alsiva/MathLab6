@@ -1,5 +1,10 @@
 package compMath;
 
+import compMath.Math.FunctionStorage;
+import compMath.Methods.AdamsMethod;
+import compMath.Methods.Answer;
+import compMath.Methods.RungeKutta;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,11 +29,17 @@ public class Application {
         */
 
         RungeKutta rungeKutta = new RungeKutta();
-
+        AdamsMethod adamsMethod = new AdamsMethod();
 
         Answer rungeAnswer = rungeKutta.solve(1, 1.5, FunctionStorage.chooseFunction(0), -1);
+        System.out.println("Runge-Kutta method");
         rungeAnswer.showAnswer();
+        System.out.println("");
 
+        Answer adamsAnswer = adamsMethod.solve(1, 1.5, FunctionStorage.chooseFunction(0), -1);
+        System.out.println("Adams method");
+        adamsAnswer.showAnswer();
+        System.out.println("");
 
     }
 
