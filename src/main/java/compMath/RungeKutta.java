@@ -2,6 +2,7 @@ package compMath;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class RungeKutta {
 
@@ -11,23 +12,24 @@ public class RungeKutta {
         double y = y0;
 
 
-        Map<Double, Double> solution = new HashMap<>();
+        Map<Double, Double> solution = new TreeMap<>();
+        Map<Double, Double> preciseSolution = new TreeMap<>();
 
-
-        for (double x = a; x <= b; x += h) {
+        for (double x = a; x <= b + h / 4 ; x += h) {
 
             solution.put(x, y);
+            preciseSolution.put(x, function.applyPreciseFunction(x));
 
             double k1 = h * function.apply(x, y);
             double k2 = h * function.apply(x + h/2, y + k1/2);
             double k3 = h * function.apply(x + h/2, y + k2/2);
             double k4 = h * function.apply(x + h, y + k3);
 
-            y = y + (1.0 / 6.0) * (k1 + k2 + k3 + k4);
+            y = y + (k1 + 2 * k2 + 2 * k3 + k4) / 6;
 
         }
 
-        return new Answer(solution);
+        return new Answer(solution, preciseSolution);
 
     }
 }

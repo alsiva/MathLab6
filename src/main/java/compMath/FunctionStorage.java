@@ -6,8 +6,8 @@ import java.util.List;
 public class FunctionStorage {
 
     private static final List<Function> FUNCTIONS = Arrays.asList(
-        new Function("y+(1+x)*(y^2)"),
-        new Function("(x^2)-(2*y)")
+        new Function("y+(1+x)*(y^2)", "-1/x"),
+        new Function("(x^2)-(2*y)", "0.75 * exp(-2*x) + 0.5*(x^2) -0.5*x +0.25")
     );
 
     public static void writeFunctionsChoice() {
