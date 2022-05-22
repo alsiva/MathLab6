@@ -18,9 +18,7 @@ public class Application {
 
     public static void main(String[] args) {
 
-
         FunctionStorage.writeFunctionsChoice();
-
         int index = readIndex();
 
         Function function = FunctionStorage.chooseFunction(index - 1);

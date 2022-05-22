@@ -18,6 +18,7 @@ public class RungeKutta implements Method {
         List<Dot> solution = new ArrayList<>();
         List<Dot> preciseSolution = new ArrayList<>();
 
+
         for (double x = a; x <= b + h / 4 ; x += h) {
 
             solution.add(new Dot(x, y));
