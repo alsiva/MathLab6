@@ -1,5 +1,6 @@
 package compMath;
 
+import compMath.Math.Function;
 import compMath.Math.FunctionStorage;
 import compMath.Methods.AdamsMethod;
 import compMath.Methods.Answer;
@@ -17,27 +18,27 @@ public class Application {
 
     public static void main(String[] args) {
 
-        /*
+
         FunctionStorage.writeFunctionsChoice();
 
         int index = readIndex();
 
         Function function = FunctionStorage.chooseFunction(index - 1);
-
         double a = readDouble("Write a: ");
         double b = readDouble("Write b: ");
+        double y0 = readDouble("Write y0: ");
+        double h = readDouble("Write h: ");
 
-        */
 
         RungeKutta rungeKutta = new RungeKutta();
         AdamsMethod adamsMethod = new AdamsMethod();
 
-        Answer rungeAnswer = rungeKutta.solve(1, 1.5, FunctionStorage.chooseFunction(0), -1);
+        Answer rungeAnswer = rungeKutta.solve(a, b, function, y0, h);
         System.out.println("Runge-Kutta method");
         rungeAnswer.showAnswer();
         System.out.println("");
 
-        Answer adamsAnswer = adamsMethod.solve(1, 1.5, FunctionStorage.chooseFunction(0), -1);
+        Answer adamsAnswer = adamsMethod.solve(a, b, FunctionStorage.chooseFunction(0), y0, h);
         System.out.println("Adams method");
         adamsAnswer.showAnswer();
         System.out.println("");

@@ -9,9 +9,9 @@ import java.util.List;
 
 public class RungeKutta implements Method {
 
-    public Answer solve(double a, double b, Function function, double y0) {
+    public Answer solve(double a, double b, Function function, double y0, double h) {
 
-        double h = 0.1;
+
         double y = y0;
 
 

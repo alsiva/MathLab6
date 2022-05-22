@@ -7,13 +7,13 @@ import compMath.Math.Function;
 
 public class AdamsMethod implements Method {
 
-    public Answer solve(double a, double b, Function function, double y0) {
+    public Answer solve(double a, double b, Function function, double y0, double h) {
 
-        double h = 0.1;
+
         int n = (int)((b - a) / h);
         double b0 = Math.min(b, a + 3 * h);
 
-        Answer rungeKuttaAnswer = new RungeKutta().solve(a, b0, function, y0);
+        Answer rungeKuttaAnswer = new RungeKutta().solve(a, b0, function, y0, h);
         DotStorage dots = rungeKuttaAnswer.getSolution();
         DotStorage preciseSolution = rungeKuttaAnswer.getPreciseSolution();
 
